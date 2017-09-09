@@ -6,3 +6,8 @@ services:
     build:
       context: ./IdentityServerBasic
       dockerfile: Dockerfile
+  api1:
+    image: api1
+    build:
+      context: ./Api1
+      dockerfile: Dockerfile
