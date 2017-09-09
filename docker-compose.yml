@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  identityserverbasic:
+    image: identityserverbasic
+    build:
+      context: ./IdentityServerBasic
+      dockerfile: Dockerfile
