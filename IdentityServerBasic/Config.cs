@@ -1,19 +1,16 @@
 ﻿using IdentityServer4.Models;
-using System;
+using IdentityServer4.Test;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace IdentityServerBasic
 {
 	public class Config
 	{
-
 		// Here is were we define are API's
 		public static IEnumerable<ApiResource> GetApiResources()
 		{
 			return new List<ApiResource>
-			{ 
+			{
 				new ApiResource("api1", "My API")
 			};
 		}
@@ -22,7 +19,7 @@ namespace IdentityServerBasic
 		public static IEnumerable<Client> GetClients()
 		{
 			return new List<Client>
-			{ 
+			{
 				new Client
 				{
 						ClientId = "client",
@@ -38,9 +35,38 @@ namespace IdentityServerBasic
 
             // scopes that client has access to
             AllowedScopes = { "api1" }
+				},
+				new Client
+				{
+						ClientId = "ro.client",
+						AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+
+						ClientSecrets =
+						{
+								new Secret("secret".Sha256())
+						},
+						AllowedScopes = { "api1" }
 				}
 			};
 		}
 
+		public static List<TestUser> GetUsers()
+		{
+			return new List<TestUser>
+		{
+				new TestUser
+				{
+						SubjectId = "1",
+						Username = "alice",
+						Password = "password"
+				},
+				new TestUser
+				{
+						SubjectId = "2",
+						Username = "bob",
+						Password = "password"
+				}
+		};
+		}
 	}
 }

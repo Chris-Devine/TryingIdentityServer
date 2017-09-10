@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -20,7 +15,10 @@ namespace IdentityServerBasic
 			services.AddIdentityServer()
 				.AddTemporarySigningCredential()
 				.AddInMemoryApiResources(Config.GetApiResources())
-				.AddInMemoryClients(Config.GetClients());
+				.AddInMemoryClients(Config.GetClients())
+				.AddTestUsers(Config.GetUsers());
+
+			services.AddMvc();
 		}
 
 		public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -33,6 +31,9 @@ namespace IdentityServerBasic
 			}
 
 			app.UseIdentityServer();
+
+			app.UseStaticFiles();
+			app.UseMvcWithDefaultRoute();
 		}
 	}
 }
