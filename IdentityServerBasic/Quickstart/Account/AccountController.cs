@@ -1,11 +1,13 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-
 using IdentityModel;
+using IdentityServer4.Events;
+using IdentityServer4.Extensions;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
 using IdentityServer4.Test;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Mvc;
@@ -15,9 +17,6 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using IdentityServer4.Events;
-using IdentityServer4.Extensions;
 
 namespace IdentityServer4.Quickstart.UI
 {
@@ -78,7 +77,7 @@ namespace IdentityServer4.Quickstart.UI
                 if (_users.ValidateCredentials(model.Username, model.Password))
                 {
                     AuthenticationProperties props = null;
-                    // only set explicit expiration here if persistent. 
+                    // only set explicit expiration here if persistent.
                     // otherwise we reply upon expiration configured in cookie middleware.
                     if (AccountOptions.AllowRememberLogin && model.RememberLogin)
                     {

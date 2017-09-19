@@ -1,7 +1,6 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-
 using IdentityServer4.Models;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
@@ -122,8 +121,8 @@ namespace IdentityServer4.Quickstart.UI
         }
 
         private ConsentViewModel CreateConsentViewModel(
-            ConsentInputModel model, string returnUrl, 
-            AuthorizationRequest request, 
+            ConsentInputModel model, string returnUrl,
+            AuthorizationRequest request,
             Client client, Resources resources)
         {
             var vm = new ConsentViewModel();
@@ -188,4 +187,3 @@ namespace IdentityServer4.Quickstart.UI
         }
     }
 }
-

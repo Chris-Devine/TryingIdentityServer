@@ -5,35 +5,36 @@ using Microsoft.Extensions.Logging;
 
 namespace IdentityServerBasic
 {
-	// If you run and goto http://localhost:5000/.well-known/openid-configuration you will see the discovery document
-	public class Startup
-	{
-		public void ConfigureServices(IServiceCollection services)
-		{
-			// Add identity server and temp signing cert
-			// We also tell it were to find APIs and clients configs
-			services.AddIdentityServer()
-				.AddTemporarySigningCredential()
-				.AddInMemoryApiResources(Config.GetApiResources())
-				.AddInMemoryClients(Config.GetClients())
-				.AddTestUsers(Config.GetUsers());
+    // If you run and goto http://localhost:5000/.well-known/openid-configuration you will see the discovery document
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            // Add identity server and temp signing cert
+            // We also tell it were to find APIs and clients configs
+            services.AddIdentityServer()
+                        .AddTemporarySigningCredential()
+                        .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                        .AddInMemoryApiResources(Config.GetApiResources())
+                        .AddInMemoryClients(Config.GetClients())
+                        .AddTestUsers(Config.GetUsers());
 
-			services.AddMvc();
-		}
+            services.AddMvc();
+        }
 
-		public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
-		{
-			loggerFactory.AddConsole(LogLevel.Debug);
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        {
+            loggerFactory.AddConsole(LogLevel.Debug);
 
-			if (env.IsDevelopment())
-			{
-				app.UseDeveloperExceptionPage();
-			}
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
-			app.UseIdentityServer();
+            app.UseIdentityServer();
 
-			app.UseStaticFiles();
-			app.UseMvcWithDefaultRoute();
-		}
-	}
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
+        }
+    }
 }
