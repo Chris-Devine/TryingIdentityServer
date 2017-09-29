@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerBasic", "IdentityServerBasic\IdentityServerBasic.csproj", "{A2285D33-2F25-401C-9BC5-27BBC69FE3E3}"
 EndProject
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api1", "Api1\Api1.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{62B900E3-033E-4B14-BE7C-75E4F1A02599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcClient", "..\MvcClient\MvcClient.csproj", "{8A581336-8958-426D-B7EB-724473664ACC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClient", "MvcClient\MvcClient.csproj", "{D7C742F9-E9B0-479C-A006-4B9621F754D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{62B900E3-033E-4B14-BE7C-75E4F1A02599}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62B900E3-033E-4B14-BE7C-75E4F1A02599}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62B900E3-033E-4B14-BE7C-75E4F1A02599}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A581336-8958-426D-B7EB-724473664ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A581336-8958-426D-B7EB-724473664ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A581336-8958-426D-B7EB-724473664ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A581336-8958-426D-B7EB-724473664ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C742F9-E9B0-479C-A006-4B9621F754D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C742F9-E9B0-479C-A006-4B9621F754D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C742F9-E9B0-479C-A006-4B9621F754D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C742F9-E9B0-479C-A006-4B9621F754D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
