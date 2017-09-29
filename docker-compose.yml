@@ -11,3 +11,9 @@ services:
     build:
       context: ./Api1
       dockerfile: Dockerfile
+services:
+  mvcclient:
+    image: mvcclient
+    build:
+      context: ./../MvcClient
+      dockerfile: Dockerfile

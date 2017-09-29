@@ -20,5 +20,9 @@ networks:
   default:
     external:
       name: nat
-
-
+services:
+  mvcclient:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
