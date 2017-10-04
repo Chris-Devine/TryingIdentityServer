@@ -1,11 +1,6 @@
 version: '3'
 
 services:
-  identityserverbasic:
-    image: identityserverbasic
-    build:
-      context: ./IdentityServerBasic
-      dockerfile: Dockerfile
   api1:
     image: api1
     build:
@@ -15,11 +10,11 @@ services:
   mvcclient:
     image: mvcclient
     build:
-      context: ./../MvcClient
+      context: ./MvcClient
       dockerfile: Dockerfile
 
   identityserveridentity:
-    image: identityserveridentity
+    image: identityserver
     build:
-      context: ./../IdentityServerIdentity
+      context: ./IdentityServerWithAspNetIdentity
       dockerfile: Dockerfile
